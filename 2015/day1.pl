@@ -1,6 +1,5 @@
 use Modern::Perl;
 use ARGV::OrDATA;
-no warnings 'experimental';
 
 my ($f, $p, $p_answer);
 while (<>) {
