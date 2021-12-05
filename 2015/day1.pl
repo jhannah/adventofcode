@@ -9,7 +9,7 @@ while (<>) {
     if ($c eq "(") { $f++ }
     if ($c eq ")") { $f-- }
     $p++;
-    say "$p $f";
+    # say "$p $f";
     if ($f == -1) {
       $p_answer //= $p;
     }
