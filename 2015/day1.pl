@@ -14,8 +14,8 @@ while (<>) {
     }
   }
 }
-say "Part 1: Floor: $f";
-say "Part 2: Position: $p_answer";
+say "Part 1: floor: $f";
+say "Part 2: position: $p_answer";
 
 __DATA__
 ()())

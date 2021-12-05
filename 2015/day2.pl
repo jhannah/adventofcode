@@ -1,15 +1,19 @@
 use Modern::Perl;
 use ARGV::OrDATA;
 
-my ($tot);
+my ($paper, $ribbon);
 while (<>) {
   chomp;
   my ($l, $w, $h) = split /x/;
-  $tot += 2 * $l * $w + 2 * $w * $h + 2 * $h * $l;
+
+  $paper += 2 * $l * $w + 2 * $w * $h + 2 * $h * $l;
   my @sides = sort { $a <=> $b } ($l, $w, $h);
-  $tot += $sides[0] * $sides[1];   # The "slack"
+  $paper += $sides[0] * $sides[1];   # The "slack"
+
+  $ribbon += $sides[0] * 2 + $sides[1] * 2 + $l * $w * $h;
 }
-say "Part 1: $tot";
+say "Part 1: paper:  $paper";
+say "Part 2: ribbon: $ribbon";
 
 __DATA__
 2x3x4
