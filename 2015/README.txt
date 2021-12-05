@@ -1,5 +1,8 @@
 https://adventofcode.com/2015
 
+My test runs / results. Your results will be different because the AoC website
+changes the input files (day1.txt, day2.txt, ...) for each user.
+
 ✗ perl day1.pl
 Part 1: floor: -1
 Part 2: position: 5
