@@ -27,11 +27,15 @@ sub cost_to_move_to {
   my $fuel;
   foreach my $p (keys %pos) {
     my $distance = abs($x - $p);
-    foreach my $i (1..$distance) {
-      $fuel += $i * $pos{$p};
-    }
+    # This mirrors the AoC explanation, but is computationally slow:
+    # foreach my $i (1..$distance) {
+    #   $fuel += $i * $pos{$p};
+    # }
+    # https://techlahoma.slack.com/archives/C01FR9T1Z8W/p1638897813173100?thread_ts=1638885374.152200&cid=C01FR9T1Z8W
+    # This achieves the same thing, but math, so faster:
+    $fuel += $distance * ($distance + 1) / 2 * $pos{$p};
   }
-  say "Moving to $x would cost $fuel";
+  # say "Moving to $x would cost $fuel";
   return $fuel;
 }
 
