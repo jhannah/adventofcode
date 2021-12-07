@@ -19,3 +19,15 @@ Part 2: ribbon: 48
 Part 1: paper:  1588178
 Part 2: ribbon: 3783758
 
+✗ perl day3_part1.pl
+Part 1: 4 houses got presents
+
+✗ perl day3_part1.pl < day3.txt
+Part 1: 2565 houses got presents
+
+✗ perl day3_part2.pl
+Part 2: 11 houses got presents
+
+✗ perl day3_part2.pl < day3.txt
+Part 2: 2639 houses got presents
+
