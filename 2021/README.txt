@@ -72,3 +72,12 @@ Part 2: 12
 ✗ perl day5_part2.pl < day5.txt
 Part 2: 20271
 
+✗ perl day6.pl
+Part 1: After 80 days there are 5934 fish
+Part 2: After 256 days there are 26984457539 fish
+
+✗ perl day6.pl < day6.txt
+Part 1: After 80 days there are 374994 fish
+Part 2: After 256 days there are 1686252324092 fish
+
+

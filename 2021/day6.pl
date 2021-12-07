@@ -2,16 +2,24 @@ use Modern::Perl;
 use ARGV::OrDATA;
 use List::Util qw(sum);
 
-my $days = 80;
-my $fish = {};
+my $input_fish = {};
 while (<>) {
   chomp;
   foreach my $timer (split /,/) {
-    $fish->{$timer}++;  # Count the fish with a certain timer
+    $input_fish->{$timer}++;  # Count the fish with a certain timer
   }
 }
+
+my $fish = $input_fish;
+my $days = 80;
 tick() for (1..$days);
-say "After $days days there are " . sum(values %$fish) . " fish";
+say "Part 1: After $days days there are " . sum(values %$fish) . " fish";
+
+$fish = $input_fish;
+$days = 256;
+tick() for (1..$days);
+say "Part 2: After $days days there are " . sum(values %$fish) . " fish";
+
 
 sub tick {
   my $new_fish = {};
@@ -25,10 +33,6 @@ sub tick {
  }
   $fish = $new_fish;
 }
-
-
-
-# say "Part 1: $rval";
 
 __DATA__
 3,4,3,1,2
