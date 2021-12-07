@@ -25,10 +25,10 @@ sub tick {
   my $new_fish = {};
   foreach my $timer (keys %$fish) {
     if ($timer > 0) {
-      $new_fish->{$timer - 1} += $fish->{$timer};
+      $new_fish->{$timer - 1} += $fish->{$timer};  # Another day older
     } else {
-      $new_fish->{6} += $fish->{$timer};
-      $new_fish->{8} += $fish->{$timer};
+      $new_fish->{6} += $fish->{$timer};   # Reset the mom's timers
+      $new_fish->{8} += $fish->{$timer};   # oooo cute! baby fish!
     }
  }
   $fish = $new_fish;

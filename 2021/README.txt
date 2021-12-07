@@ -80,4 +80,3 @@ Part 2: After 256 days there are 26984457539 fish
 Part 1: After 80 days there are 374994 fish
 Part 2: After 256 days there are 1686252324092 fish
 
-
