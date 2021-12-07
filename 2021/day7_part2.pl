@@ -1,7 +1,9 @@
 use Modern::Perl;
 use ARGV::OrDATA;
 use List::Util qw(sum);
+use Devel::Timer;
 
+my $t = Devel::Timer->new();
 my %pos;   # count of crabs at each position
 while (<>) {
   chomp;
@@ -13,6 +15,8 @@ while (<>) {
 my @all_pos = sort { $a <=> $b } keys %pos;
 my $min = $all_pos[0];
 my $max = $all_pos[-1];
+$t->mark('input parsing complete');
+
 my %all_costs;
 foreach my $x ($min..$max) {
   my $cost = cost_to_move_to($x);
@@ -20,7 +24,8 @@ foreach my $x ($min..$max) {
 }
 my ($min_cost) = sort { $a <=> $b } keys %all_costs;
 say "Move to $all_costs{$min_cost}, which will cost you $min_cost";
-
+$t->mark('solution found');
+$t->report;
 
 sub cost_to_move_to {
   (my $x) = @_;
