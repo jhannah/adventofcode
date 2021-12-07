@@ -10,12 +10,12 @@ while (<>) {
   say "Move to $final_pos";
   foreach my $c (@c) {
     my $distance = abs($c - $final_pos);
-    say "Moving $c to $final_pos";
+    # say "Moving $c to $final_pos";
     foreach my $i (1..$distance) {
       $fuel += $i;
-      say "  + $i";
+      # say "  + $i";
     }
-    say "  = $fuel";
+    # say "  = $fuel";
   }
   say "Part 2: fuel is $fuel";
 }
