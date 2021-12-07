@@ -80,3 +80,9 @@ Part 2: After 256 days there are 26984457539 fish
 Part 1: After 80 days there are 374994 fish
 Part 2: After 256 days there are 1686252324092 fish
 
+✗ perl day7.pl
+Part 1: fuel is 37
+
+✗ perl day7.pl < day7.txt
+Part 1: fuel is 347011
+
