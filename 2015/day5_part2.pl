@@ -16,7 +16,7 @@ while (<>) {
   chomp;
   $cnt++ if (check($_) eq "nice");
 }
-say "Part 1: $cnt words were nice";
+say "Part 2: $cnt words were nice";
 
 sub check {
   my ($in) = @_;
