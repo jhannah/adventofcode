@@ -29,7 +29,6 @@ while (<>) {
 }
 
 say "Part 1: " . $score;
-# say "Part 2: " . ($elves[0] + $elves[1] + $elves[2]);
 
 
 __DATA__
