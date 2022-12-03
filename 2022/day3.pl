@@ -6,10 +6,7 @@ use Data::Printer;
 
 my %priority;
 my $p = 1;
-foreach my $i ("a".."z") {
-  $priority{$i} = $p++;
-}
-foreach my $i ("A".."Z") {
+foreach my $i ("a".."z", "A".."Z") {
   $priority{$i} = $p++;
 }
 # p %priority;
@@ -17,7 +14,7 @@ foreach my $i ("A".."Z") {
 my $sum = 0;
 while (<>) {
   chomp;
-  say;
+  # say;
   my $len = length($_) / 2;
   my ($comp1, $comp2) = /(.{$len})/g;   # compartments
   # p $comp1;
