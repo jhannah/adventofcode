@@ -20,15 +20,15 @@ while (<>) {
   if (                         #   j--k
     ($l >= $j && $l <= $k) ||  #      l--m
     ($m >= $j && $m <= $k) ||  # l-m
-    ($l <= $j && $m => $k)     #  l----m
+    ($l <= $j && $m >= $k)     #  l----m
   ) {
     say "$j-$k,$l-$m is true";
     say "  " . (($l >= $j && $l <= $k) ? "true" : "false");
     say "  " . (($m >= $j && $m <= $k) ? "true" : "false");
-    say "  " . (($l <= $j && $m => $k) ? "true" : "false");
+    say "  " . (($l <= $j && $m >= $k) ? "true" : "false");
     say "    " . (($l <= $j) ? "true" : "false");
-    say "    " . (($m => $k) ? "true" : "false");
-    say "  " . ((($l <= $j) && ($m => $k)) ? "true" : "false");
+    say "    " . (($m >= $k) ? "true" : "false");
+    say "  " . ((($l <= $j) && ($m >= $k)) ? "true" : "false");
     $part2_cnt++;
   }
 }
