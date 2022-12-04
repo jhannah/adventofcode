@@ -4,19 +4,37 @@ use 5.36.0;
 use ARGV::OrDATA;
 use Data::Printer;
 
-my $cnt = 0;
+my $part1_cnt = 0;
+my $part2_cnt = 0;
 while (<>) {
   chomp;
-  my ($a, $b, $c, $d) = split /\D/;
+  # lol $a and $b are magic variables (sort), so don't use those!
+  # https://perlmaven.com/dont-use-a-and-b-variables
+  my ($j, $k, $l, $m) = split /\D/;
   if (
-    ($a >= $c && $b <= $d) ||   # First is a subset of second
-    ($c >= $a && $d <= $b)      # Second is a subset of first
+    ($j >= $l && $k <= $m) ||   # First is a subset of second
+    ($l >= $j && $m <= $k)      # Second is a subset of first
   ) {
-    $cnt++;
+    $part1_cnt++;
+  }
+  if (                         #   j--k
+    ($l >= $j && $l <= $k) ||  #      l--m
+    ($m >= $j && $m <= $k) ||  # l-m
+    ($l <= $j && $m => $k)     #  l----m
+  ) {
+    say "$j-$k,$l-$m is true";
+    say "  " . (($l >= $j && $l <= $k) ? "true" : "false");
+    say "  " . (($m >= $j && $m <= $k) ? "true" : "false");
+    say "  " . (($l <= $j && $m => $k) ? "true" : "false");
+    say "    " . (($l <= $j) ? "true" : "false");
+    say "    " . (($m => $k) ? "true" : "false");
+    say "  " . ((($l <= $j) && ($m => $k)) ? "true" : "false");
+    $part2_cnt++;
   }
 }
 
-say "Part 1: $cnt";
+say "Part 1: $part1_cnt";
+say "Part 2: $part2_cnt";
 
 
 __DATA__
