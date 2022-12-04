@@ -1,8 +1,10 @@
 #! env perl
+# The story of why there's so much debug below. In 3 acts:
+#   https://octodon.social/@deafferret/109456551033751518
 
 use 5.36.0;
 use ARGV::OrDATA;
-use Data::Printer;
+# use Data::Printer;
 
 my $part1_cnt = 0;
 my $part2_cnt = 0;
@@ -23,13 +25,15 @@ while (<>) {
     ($m >= $j && $m <= $k) ||  # l-m
     ($l <= $j && $m >= $k)     #  l----m
   ) {
-    say "$j-$k,$l-$m is true";
-    say "  " . (($l >= $j && $l <= $k) ? "true" : "false");
-    say "  " . (($m >= $j && $m <= $k) ? "true" : "false");
-    say "  " . (($l <= $j && $m >= $k) ? "true" : "false");
-    say "    " . (($l <= $j) ? "true" : "false");
-    say "    " . (($m >= $k) ? "true" : "false");
-    say "  " . ((($l <= $j) && ($m >= $k)) ? "true" : "false");
+    if (0) {
+      say "$j-$k,$l-$m is true";
+      say "  " . (($l >= $j && $l <= $k) ? "true" : "false");
+      say "  " . (($m >= $j && $m <= $k) ? "true" : "false");
+      say "  " . (($l <= $j && $m >= $k) ? "true" : "false");
+      say "    " . (($l <= $j) ? "true" : "false");
+      say "    " . (($m >= $k) ? "true" : "false");
+      say "  " . ((($l <= $j) && ($m >= $k)) ? "true" : "false");
+    }
     $part2_cnt++;
   }
 }
