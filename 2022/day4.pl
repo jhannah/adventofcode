@@ -10,6 +10,7 @@ while (<>) {
   chomp;
   # lol $a and $b are magic variables (sort), so don't use those!
   # https://perlmaven.com/dont-use-a-and-b-variables
+  #   ( turns out $a and $b were not the problem, my typo was. But still. :) )
   my ($j, $k, $l, $m) = split /\D/;
   if (
     ($j >= $l && $k <= $m) ||   # First is a subset of second
