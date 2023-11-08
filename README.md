@@ -1,8 +1,8 @@
-My solutions to adventofcode.com puzzles. Spoilers. Duh.
+My solutions to adventofcode.com puzzles. Spoilers. (Duh.)
 
-My overall progress:
+Anyone can see their overall progress
+[here](https://adventofcode.com/2023/events). Mine:
 
-https://adventofcode.com/2023/events
 ```
 [2023]    
 [2022]  8*
