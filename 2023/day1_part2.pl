@@ -18,11 +18,11 @@ my %convert = (
 );
 while (<>) {
   chomp;
+  # https://www.reddit.com/r/adventofcode/comments/1884fpl/2023_day_1for_those_who_stuck_on_part_2/
   # wut??
   # > The right calibration values for string "eighthree" is 83 and for "sevenine" is 79.
   # > The examples do not cover such cases.
   # that is unexpected and silly
-  # https://www.reddit.com/r/adventofcode/comments/1884fpl/2023_day_1for_those_who_stuck_on_part_2/
 
   # This does overlapping matches?
   # perldoc perlre
