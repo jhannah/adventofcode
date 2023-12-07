@@ -18,7 +18,21 @@ my %convert = (
 );
 while (<>) {
   chomp;
-  my @digits = ($_ =~ /$reg/g);
+  # wut??
+  # > The right calibration values for string "eighthree" is 83 and for "sevenine" is 79.
+  # > The examples do not cover such cases.
+  # that is unexpected and silly
+  # https://www.reddit.com/r/adventofcode/comments/1884fpl/2023_day_1for_those_who_stuck_on_part_2/
+
+  # This does overlapping matches?
+  # perldoc perlre
+  #   "(?=*pattern*)"
+  #     "(*pla:*pattern*)"
+  #     "(*positive_lookahead:*pattern*)"
+  #         A zero-width positive lookahead assertion. For example,
+  #         "/\w+(?=\t)/" matches a word followed by a tab, without
+  #         including the tab in $&.
+  my @digits = ($_ =~ /(?=$reg)/g);
   # say join " ", @digits;
   my $first = shift @digits;
   my $last = pop @digits;
@@ -34,16 +48,11 @@ while (<>) {
   # say $first . $last;
   my $this_line = $first . $last;
   say;
-  say "$total + $this_line";
+  say "$total + $this_line\n";
   $total += $first . $last;
 }
 say $total;
 
 __DATA__
-two1nine
-eightwothree
-abcone2threexyz
-xtwone3four
-4nineeightseven2
-zoneight234
-7pqrstsixteen
+eighthree
+sevenine
