@@ -6,3 +6,6 @@
 
 ✗ perl day2_part1.pl < day2.txt
 2810
+
+✗ perl day2_part2.pl < day2.txt
+69110
