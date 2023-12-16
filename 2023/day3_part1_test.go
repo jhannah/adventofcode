@@ -6,7 +6,7 @@ import (
 	"log"
 	"testing"
 
-	"../go_pkg/file"
+	"go_pkg/file"
 )
 
 /*
@@ -16,13 +16,13 @@ func main() {
 */
 
 func TestProcess(t *testing.T) {
-	value := process(file.GetFile("../input_test.txt"))
+	value := process(file.GetFile("day3_test.txt"))
 
 	expect := 4361
 	if value != expect {
 		t.Fatalf("Received %v, but expected %v", value, expect)
 	}
 
-	value = process(file.GetFile("../input.txt"))
+	value = process(file.GetFile("day3.txt"))
 	log.Println("The answer is", value)
 }
